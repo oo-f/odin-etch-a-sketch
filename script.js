@@ -3,7 +3,7 @@ const clearAll = document.getElementById("clear");
 const main = document.getElementById("main");
 const containerSize = 400;
 
-    
+ 
 const createGrid = (rows, cols) => {
     main.innerHTML = "";
 
@@ -24,7 +24,7 @@ const createGrid = (rows, cols) => {
         div.style.backgroundColor = "#000";
       });   
 
-        rowDiv.appendChild(div); // Append the column div to the row
+        rowDiv.appendChild(div); 
       }
 
       main.appendChild(rowDiv);
@@ -37,7 +37,9 @@ chooseSize.addEventListener("click", function() {
   const rows = prompt("Amount of Rows");
   const cols = prompt("Amount of Columns");
 
-  if (rows && cols) {
+  if (rows > 100 || cols > 100) {
+    alert("100 is the max, sorry");
+  } else if (rows && cols) {
     createGrid(Number(rows), Number(cols));
   }
 });  
